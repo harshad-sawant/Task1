@@ -1,0 +1,31 @@
+​Task 02: Prompting for Creativity (Ad Copy)
+
+​1. The Basic Prompt (No Tone/No Examples):
+​"Write an advertisement for an energy drink named Syntax Soda that is made for programmers."
+​Result 1 (Boring Output):
+​"Introducing Syntax Soda, the new energy drink designed specifically for programmers. It helps you stay awake during long coding sessions. Get the energy you need to finish your project. Buy it today."
+
+​2. The Advanced Prompt (Creative + Few-Shot + Witty Tone):
+​"Act as a witty, sarcastic marketing copywriter. I will give you a product, and you must write a short, punchy slogan and a 2-sentence ad description using coding humor.
+
+​Example 1:
+Product: Indestructible Keyboard
+Slogan: 'Rage-quit proof.'
+Ad: 'Smash your bugs, not your hardware. Built to survive your worst compile errors.'
+
+​Example 2:
+Product: Noise-Canceling Headphones
+Slogan: 'Mute the Manager.'
+Ad: 'Block out the open office noise. Focus on the code, ignore the chaos.'
+
+​Task:
+Product: 'Syntax Soda' (A high-caffeine energy drink for developers)."
+
+​Result 2 (Creative Output):
+​Slogan: "404: Sleep Not Found."
+Ad: "Powered by caffeine and desperation. Drink Syntax Soda and turn your spaghetti code into a masterpiece before the deadline hits."
+
+​3. Analysis of Results:
+​Comparison: The first prompt produced a generic, robotic advertisement that could apply to any drink. It lacked personality.
+Technique Used: In the second prompt, I used Few-Shot Prompting (providing two examples of the desired style) and specified a "witty, sarcastic" persona.
+Outcome: The result was highly tailored to the target audience (developers), using specific terminology ("404", "spaghetti code") and humor that engages the reader effectively.
