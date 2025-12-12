@@ -1,0 +1,49 @@
+​Task 03: Prompting for Task Automation
+​1. The System Prompt:
+​"You are an automated Data Parsing Assistant. Your job is to extract specific details from unstructured job descriptions and format them into a strict JSON object.
+​Extraction Rules:
+​Role: The title of the job.
+​Company: The name of the hiring company.
+​Skills: A list (array) of technical skills mentioned.
+​Experience: The years of experience required (extract as a string).
+​Output Format: Return ONLY the JSON object. Do not add any conversational text or markdown formatting like 'Here is your JSON'.
+​Input Text:
+[INSERT INPUT TEXT HERE]"
+​2. Input/Output Examples:
+​Example 1:
+Input:
+​"We are hiring a Senior Python Developer at TechNova Solutions. The candidate must have at least 5 years of experience. Key skills needed are Django, Flask, and PostgreSQL. Remote work is available."
+Output :
+{
+  "Role": "Senior Python Developer",
+  "Company": "TechNova Solutions",
+  "Skills": ["Django", "Flask", "PostgreSQL"],
+  "Experience": "5 years"
+}
+
+Example 2:
+
+Input:
+​"Join the GreenEarth team! We need a Frontend Engineer with React and Redux knowledge. You should have 2+ years of coding experience. Ideally, you also know TypeScript."
+Output:
+{
+  "Role": "Frontend Engineer",
+  "Company": "GreenEarth",
+  "Skills": ["React", "Redux", "TypeScript"],
+  "Experience": "2+ years"
+}
+
+Example 3:
+
+​Input:
+​"Startup looking for a Data Analyst. Must be proficient in SQL, Tableau, and Python. Freshers are welcome to apply, 0-1 years exp required."
+Output:
+{
+  "Role": "Data Analyst",
+  "Company": "Startup",
+  "Skills": ["SQL", "Tableau", "Python"],
+  "Experience": "0-1 years"
+}
+​3. Reflection:
+​Why this works: The prompt assigns a specific "Persona" (Data Parsing Assistant) and defines a strict "Output Format" (JSON). By explicitly commanding the AI to "Return ONLY the JSON object," I removed conversational clutter (like "Sure! Here is the data...").
+Automation Value: This prompt allows me to automatically feed hundreds of raw text files into the LLM and receive database-ready JSON code without manual editing, streamlining the data entry process.
