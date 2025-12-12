@@ -1,0 +1,82 @@
+Prompt task 1
+
+​"Act as a Python expert. Write a robust Python script for a command-line calculator. It must support addition, subtraction, multiplication, and division. Crucially, include error handling for 'division by zero' and valid input checks. Allow the user to perform multiple calculations in a loop until they type 'exit'."
+
+
+​3. The Output (Result):
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        raise ValueError("Error: Division by zero is not allowed.")
+    return x / y
+
+def get_number(prompt):
+    """
+    Function to take number input from user.
+    Handles invalid (non-numeric) input.
+    """
+    while True:
+        user_input = input(prompt)
+        if user_input.lower() == 'exit':
+            return 'exit'
+        try:
+            return float(user_input)
+        except ValueError:
+            print("❌ Invalid input! Please enter a valid number.")
+
+def calculator():
+    print("--- Python Command-Line Calculator ---")
+    print("Operations: +, -, *, /")
+    print("Type 'exit' at any time to close.\n")
+
+    while True:
+        # Get first number
+        num1 = get_number("Enter first number: ")
+        if num1 == 'exit':
+            break
+
+        # Get operator
+        operator = input("Choose operator (+, -, *, /): ")
+        if operator.lower() == 'exit':
+            break
+        if operator not in ('+', '-', '*', '/'):
+            print("❌ Invalid operator! Please choose +, -, *, or /.")
+            continue
+
+        # Get second number
+        num2 = get_number("Enter second number: ")
+        if num2 == 'exit':
+            break
+
+        # Calculation logic
+        try:
+            if operator == '+':
+                result = add(num1, num2)
+            elif operator == '-':
+                result = subtract(num1, num2)
+            elif operator == '*':
+                result = multiply(num1, num2)
+            elif operator == '/':
+                result = divide(num1, num2)
+            
+            print(f"✅ Result: {num1} {operator} {num2} = {result}\n")
+            print("-" * 30)
+
+        except ValueError as e:
+            print(f"❌ {e}\n")
+        except Exception as e:
+            print(f"❌ Something went wrong: {e}\n")
+
+    print("Calculator closing. Goodbye!")
+
+if __name__ == "__main__":
+    calculator()
